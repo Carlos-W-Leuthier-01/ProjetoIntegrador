@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+.background {
+    font-family: 'Poppins';
+    background-color: white;
+}
+
+.header {
+    width: 100%;
+    background: rgba(231, 231, 231, 0.41);
+    box-shadow: 0px 4px 4px -5px rgba(0, 0, 0, 0.25);
+}
+
+.person {
+    position: absolute;
+    border-radius: 100%;
+    width: 80px;
+    height: 80px;
+    left: 34px;
+    top: 16px;
+    background: #FFCB66;
+}
+
+.name {
+    padding-top: 35px;
+    font-size: 14pt;
+}
+
+.email {
+    font-size: 11pt;
+    margin-top: -2.4%;
+    margin-bottom: 7px;
+    margin-left: 30px;
+    color:#9b9b9b
+}
+
+.emailhome {
+    width: 20px;
+}
+
+.search {
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    right: 0;
+    margin-right: 100px;
+}
+
+.section {
+    margin-left: 150px;
+}
+
+.Btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -13px;
+}
+
+.BtnGen {
+    background: #FFFFFF;
+    border: 1px solid #7D1F2A;
+    border-radius: 5px 0px 0px 5px;
+    color: white;
+    width: 200px;
+    height: 30px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: #7D1F2A;
+    cursor: pointer;
+}
+
+.BtnDoc {
+    background: #FFFFFF;
+    border: 1px solid #7D1F2A;
+    color: #7D1F2A;
+    height: 30px;
+    width: 150px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.BtnPre {
+    background: #FFFFFF;
+    border: 1px solid #7D1F2A;
+    color: #7D1F2A;
+    height: 30px;
+    width: 150px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+.BtnOut {
+    background: #FFFFFF;
+    border: 1px solid #7D1F2A;
+    border-radius: 0px 5px 5px 0px;
+    color: #7D1F2A;
+    height: 30px;
+    width: 150px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.session {
+    position: relative;
+    display: flex;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.h2 {
+    font-size: 16pt;
+    margin-left: 20px;
+}
+
+.Input {
+    background-image: image(search);
+    position: absolute;
+    height: 35px;
+    width: 260px;
+    position: fixed;
+    right: 0;
+    margin-right: 160px;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+}
+
+.BtnAdd {
+    background-color: #FFCB66;
+    border: 2px solid #FFCB66;
+    color: white;
+    border-radius: 5px;
+    width: 110px;
+    height: 38px;
+    position: fixed;
+    right: 0;
+    margin-right: 40px;
+    top: 34.5%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 11pt;
+}
+
+
+.Info {
+    display: flex;
+    border: 2px solid #e0e0e0;
+    border-radius: 5px;
+    margin: 40px;
+    padding: 6px;
+
+}
+
+.Box {
+    position: absolute;
+    left: 2%;
+    right: 91%;
+    height: 35px;
+    background: #27D8FF;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-left: 30px;
+
+    color: white;
+    text-align: center;
+    font-family: 'Poppins';
+    font-weight: 600;
+    align-items: center;
+
+}
+
+.Sip {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.info {
+ 
+    margin-left: 90px;
+    
+}
+
+.pinfo {
+    font-size: 10pt;
+}
+
+.hinfo {
+    font-size: 12pt;
+    font-style: normal;
+    font-weight: 500;
+}

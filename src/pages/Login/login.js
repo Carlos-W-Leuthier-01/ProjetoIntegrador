@@ -1,43 +1,105 @@
-import { Link } from "react-router-dom";
- import style from './login.module.css';
- import google from '../../images/google.png';
- import email from '../../images/email.png';
- import apple from '../../images/apple.png';
- import banner from '../../images/banner.png';
- import logo from '../../images/logo.png';
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import style from './login.module.css';
+import google from '../../images/google.png';
+import email from '../../images/email.png';
+import apple from '../../images/apple.png';
+import banner from '../../images/banner.png';
+import logo from '../../images/logo.png';
 
 
- export default function login() {
+ export default function Login() {
+
+    const [inputEmail, setinputEmail] = useState('');
+    const [inputSenha, setinputSenha] = useState('');
+    const navigate = useNavigate();
+
+  
+    const appId = 'n7Du9WmGouDZ7gYjkn5MiXas8nfGjT4qFwrk45zX';
+    const apiKey = 'JuRfAoomwwFNZwdlB1Ndx4NRj9pX7gMly2aqqYb1';
+
+    const data = {
+    email: inputEmail,
+    senha: inputSenha
+    };
+
+
+    async function handleSubmit(navigate) {
+
+
+    try {
+        const response = await fetch('https://parseapi.back4app.com/classes/user', {
+        method: 'POST',
+        headers: {
+            'X-Parse-Application-Id': appId,
+            'X-Parse-REST-API-Key': apiKey,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+        console.log('Dados enviados com sucesso:', result);
+
+        
+
+        localStorage.setItem('userEmail', inputEmail);
+
+      
+        navigate('/home');
+        
+    } catch (error) {
+        console.error('Erro ao enviar dados:', error);
+    }
+    }
+
+
       
     return (
         <>
-        <img src={logo}></img>
+        <img src={logo} className={style.logo}></img>
         <div className={style.ContainerBox}>
-            <h1>Bem-Vindo de volta</h1>
-            <input type='text' placeholder='Enter your email' className={style.InputSignIn}></input>
-            <input type='text' placeholder='Enter your password' className={style.InputSignIn}></input>
-            <a className={style.a}>Esqueceu sua senha?</a>
+            <form className={style.form} onSubmit={handleSubmit}>
 
-            <div>
-                <button className={style.btnSignIn} >
-                </button>
-            </div>
+                <h1>Bem-Vindo de <br></br> volta</h1>
+                <input type='text' 
+                placeholder='Enter your email' 
+                className={style.InputSignIn}
+                value={inputEmail}
+                onChange={(event) => setinputEmail(event.target.value)}
+                ></input>
 
+                <input type='text' 
+                placeholder='Enter your password' 
+                className={style.InputSignIn}
+                value={inputSenha}
+                onChange={(event) => setinputSenha(event.target.value)}
+                ></input>
+
+                <a className={style.a}>Esqueceu sua senha?</a>
+
+            
+            <button className={style.btnSignIn} > Sign In </button>
+               
+
+            </form>
             
             <div className={style.btn}>
                 <button className={style.options}>
-                    <img src={google} width='25px' height='25px' ></img>
+                    <img src={google} width='20px' height='20px' ></img>
                 </button>
                 <button className={style.options}>
-                    <img src={email} width='35px' height='30px' align='center'></img>
+                    <img src={email} width='22px' height='20px'></img>
                 </button>
                 <button className={style.options} >
-                    <img src={apple} width='25px' height='30px'></img>
+                    <img src={apple} width='20px' height='22px'></img>
                 </button>
                 
             </div>
+
         </div>
             <img src={banner} className={style.imgBanner}></img>
+            <div className={style.line}></div>
         </>
     )
  }
