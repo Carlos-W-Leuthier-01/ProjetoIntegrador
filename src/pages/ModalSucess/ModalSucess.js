@@ -7,8 +7,7 @@ const ModalSuccess = ({ onClose }) => {
   const navigate = useNavigate();
 
   const handleVerSolicitacoes = () => {
-    onClose();
-    navigate('/home'); 
+    window.location.reload();
   };
 
 

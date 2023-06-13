@@ -1,41 +1,19 @@
 import React, { useState, useEffect } from "react";
 import style from "./home.module.css";
-import Modal from "react-modal";
 import emailhome from "../../images/emailhome.png";
 import search from "../../images/search.png";
+import Modal from "../Modal/Modal"
 
 export default function Home() {
-  const [userData, setUserData] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  
+  const openModal = () => {
+    setModalIsOpen(true);
+   };
 
-  const appId = "n7Du9WmGouDZ7gYjkn5MiXas8nfGjT4qFwrk45zX";
-  const apiKey = "JuRfAoomwwFNZwdlB1Ndx4NRj9pX7gMly2aqqYb1";
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(
-          "https://parseapi.back4app.com/classes/user",
-          {
-            headers: {
-              "X-Parse-Application-Id": appId,
-              "X-Parse-REST-API-Key": apiKey,
-            },
-          }
-        );
-
-        const result = await response.json();
-        setUserData(result);
-      } catch (error) {
-        console.error("Erro ao buscar dados:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (!userData) {
-    return <div>Carregando...</div>;
-  }
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   return (
     <div className={style.background}>
@@ -44,7 +22,7 @@ export default function Home() {
         <div className={style.section}>
           <h2 className={style.name}>Helena dos Santos</h2>
           <img src={emailhome} className={style.emailhome}></img>
-          <p className={style.email}>{userData.email}</p>
+          <p className={style.email}>email@helena.com</p>
           <img></img>
         </div>
       </header>
@@ -58,7 +36,12 @@ export default function Home() {
       <section className={style.session}>
         <h2 className={style.h2}>Solicitações</h2>
         <input type="text" className={style.Input}></input>
-        <button className={style.BtnAdd}>Adicionar</button>
+        <button className={style.BtnAdd} onClick={openModal}>Adicionar</button>
+          {modalIsOpen && (
+            <div>
+              <Modal onRequestClose={closeModal} />
+            </div>
+          )}
       </section>
       <div className={style.Info}>
         <div className={style.Box}>

@@ -71,6 +71,7 @@
     cursor: pointer;
 }
 
+
 .BtnDoc {
     background: #FFFFFF;
     border: 1px solid #7D1F2A;
@@ -106,6 +107,11 @@
     cursor: pointer;
 }
 
+.BtnGen:hover, .BtnDoc:hover, .BtnPre:hover, .BtnOut:hover {
+    background-color: #7D1F2A;
+    color: white;
+    transition: 0.5s;
+}
 .session {
     position: relative;
     display: flex;
