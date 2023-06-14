@@ -6,6 +6,8 @@ import Modal from "../Modal/Modal"
 
 export default function Home() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [cursoSelecionado, setCursoSelecionado] = useState('');
+  const [disciplinaSelecionada, setDisciplinaSelecionada] = useState('')
   
   const openModal = () => {
     setModalIsOpen(true);
@@ -14,6 +16,13 @@ export default function Home() {
   const closeModal = () => {
     setModalIsOpen(false);
   };
+
+
+  //const handleConfirmSelection = (curso, disciplina) => {
+    //setCurso(curso);
+    //setDisciplina(disciplina);
+  //};
+
 
   return (
     <div className={style.background}>
@@ -49,7 +58,7 @@ export default function Home() {
         </div>
         <div className={style.info}>
           <h5 className={style.hinfo}>
-            Sistemas para Internet - Teste de Software
+            {cursoSelecionado} - {disciplinaSelecionada}
           </h5>
           <p className={style.pinfo}>23/10/2023</p>
         </div>
