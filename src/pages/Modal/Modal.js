@@ -19,27 +19,27 @@ const Modal = ({ isOpen, onRequestClose }) => {
   useEffect(() => {
     const fetchCursos = async () => {
       try {
-        const responseCursos = await fetch('https://parseapi.back4app.com/classes/Curso', {
+        const responseCursos = await fetch('https://tcc-demanda-de-turmas.onrender.com/api/curso', {
           headers: {
             'X-Parse-Application-Id': id,
             'X-Parse-REST-API-Key': api
           }
         });
   
-        const responseDisciplinas = await fetch('https://parseapi.back4app.com/classes/Disciplina', {
+        const responseDisciplinas = await fetch('https://tcc-demanda-de-turmas.onrender.com/api/disciplina', {
           headers: {
             'X-Parse-Application-Id': id,
             'X-Parse-REST-API-Key': api
           }
         });
-        const responseProfessores = await fetch('https://parseapi.back4app.com/classes/Professor', {
+        const responseProfessores = await fetch('https://tcc-demanda-de-turmas.onrender.com/api/professor', {
           headers: {
             'X-Parse-Application-Id': id,
             'X-Parse-REST-API-Key': api
           }
         });
 
-        const responseSalas = await fetch('https://parseapi.back4app.com/classes/Sala', {
+        const responseSalas = await fetch('https://tcc-demanda-de-turmas.onrender.com/api/sala', {
           headers: {
             'X-Parse-Application-Id': id,
             'X-Parse-REST-API-Key': api

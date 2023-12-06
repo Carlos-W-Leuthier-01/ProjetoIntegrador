@@ -25,7 +25,7 @@ export default function Login() {
 
     try {
       const response = await fetch(
-        "https://parseapi.back4app.com/classes/user",
+        "https://tcc-demanda-de-turmas.onrender.com/api/user",
         {
           method: "POST",
           headers: {
